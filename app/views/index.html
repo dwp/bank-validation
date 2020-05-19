@@ -1,44 +1,67 @@
-
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Check bank or building society details",
+    serviceUrl: "account-home",
+    navigation: [
+    {
+      href: "",
+      text: ""
+    }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+  <form action="/results" method="post" class="form">
 
-      <h2 class="govuk-heading-m">About this page</h2>
+  <h1 class="govuk-heading-l">Bank or building society account details</h1>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort-code">
+    Sort code
+  </label>
+  <span id="sort-code-hint" class="govuk-hint">
+    Must be 6 digits long
+  </span>
+  <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+</div>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="account-number">
+    Account number
+  </label>
+  <span id="account-number-hint" class="govuk-hint">
+    Must be between 6 and 8 digits long
+  </span>
+  <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+</div>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="roll-number">
+    Building society roll number (if you have one)
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint" spellcheck="false">
+</div>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
-    </div>
+<a href="results" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Search
+</a>
+
+  </form>
+  </div>
 </div>
 
 {% endblock %}
