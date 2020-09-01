@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "https://www.gov.uk/",
+  serviceName: "Check bank or building society details",
+  serviceUrl: "account-home",
+  navigation: [
+  {
+    href: "",
+    text: ""
+  }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">What do you want to do?</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-m"><a href="find-an-account">Find an account</a></h3>
+    <p class="govuk-body">Search for a bank or building soceity account using a sortcode and account number.</p>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-m"><a href="find-a-branch">Find a branch</a></h3>
+    <p class="govuk-body">Search for a bank or building society branch using either a bank name, address or phone number</p>
+  </div>
+</div>
+
+{% endblock %}
