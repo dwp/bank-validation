@@ -27,7 +27,7 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Find a branch</h1>
+<h1 class="govuk-heading-l">Find an account</h1>
 
 <div class="govuk-grid-row">
 
@@ -37,48 +37,42 @@
 
       <div class="search-filter__title">
         <h2 class="govuk-heading-m">Search</h2>
-        <p class="govuk-body">Enter up to three search terms. You can include partial search terms.</p>
       </div>
 
-      <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="reference">
-            Bank name
+            Sortcode
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint" value="012287">
         </div>
       </div>
-      <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="email">
-            Town or city
+            Account number
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint" value="03648126">
         </div>
       </div>
-      <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="cardholderName">
-            Postcode
+            Roll number (optional)
           </label>
           <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint">
-        </div>
-      </div>
-      <div class="govuk-grid-column-one-quarter">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="lastDigitsCardNumber">
-            Phone number
-          </label>
-          <input class="govuk-input govuk-!-font-size-16" id="lastDigitsCardNumber" name="lastDigitsCardNumber" type="text" aria-describedby="lastDigitsCardNumber-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*">
         </div>
       </div>
 
       <div class="govuk-grid-row">
     <div class="search-filter__search-button">
-      <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-grid-column-one-third">
       <a href="find-a-branch-results" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2 govuk-!-width-full" data-module="govuk-button">
       Search
       </a>
+      </div>
+      <div class="govuk-grid-column-one-third" style="padding-top: 10px;">
+          <a href="find-an-account2" class="govuk-link">Clear search</a>
       </div>
     </div>
 
@@ -87,8 +81,27 @@
 </div>
 </div>
 
-<h3 class="govuk-heading-s govuk-!-margin-top-5">0 banks and building societies found</h3>
+<h3 class="govuk-heading-s govuk-!-margin-top-5">1 account found</h3>
 
-
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Bank name</th>
+      <th scope="col" class="govuk-table__header">Sortcode</th>
+      <th scope="col" class="govuk-table__header">Account number</th>
+      <th scope="col" class="govuk-table__header">Roll number</th>
+      <th scope="col" class="govuk-table__header">More</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Barclays</td>
+      <td class="govuk-table__cell">012287</td>
+      <td class="govuk-table__cell">03648126</td>
+      <td class="govuk-table__cell">N/A</td>
+      <td class="govuk-table__cell"><a href="#">View more</a></td>
+    </tr>
+  </tbody>
+</table>
 
 {% endblock %}
