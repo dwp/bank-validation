@@ -3,34 +3,49 @@
 {% block header %}
 {% include "includes/cookie-banner.html" %}
 {# Set serviceName in config.js. #}
-{{ govukHeader({
-  homepageUrl: "https://www.gov.uk/",
-  serviceName: "Check bank or building society details",
-  serviceUrl: "account-home",
-  navigation: [
-  {
-    href: "home",
-    text: "Home"
-  },
-  {
-    href: "find-an-account2",
-    text: "Find an account",
-    active: true
-  },
-  {
-    href: "find-a-branch",
-    text: "Find a branch"
-  }
-  ]
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+
+{{ hmctsHeader({
+
+service: {
+name: 'Validate bank details',
+url: '#'
+},
+
+navigation: {
+label: 'Account navigation',
+items: [{
+  text: '',
+  href: ''
+}
+]
+}
+
+}) }}
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+label: 'Primary navigation',
+items: [
+{
+  text: 'Home',
+  href: 'home'
+},
+{
+  text: 'Find an account',
+  href: 'find-an-account2',
+  active: true
+},
+{
+  text: 'Find a branch',
+  href: 'find-a-branch'
+}
+]
 }) }}
 {% endblock %}
 
 {% block beforeContent %}
-
-{{ govukBackLink({
-  text: "Back",
-  href: "home"
-}) }}
 
 {% endblock %}
 
