@@ -56,6 +56,8 @@ items: [
 
 <div class="govuk-grid-row">
 
+  <form action="/prototypes/02/find-a-branch-results" method="post" class="form">
+
   <div class="search-filter">
 
     <div class="search-filter__selected">
@@ -67,52 +69,55 @@ items: [
 
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="reference">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="name1">
             Bank name
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="bank-name" name="name1" type="text" aria-describedby="name-hint">
         </div>
       </div>
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="email">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="city1">
             Town or city
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="bank-city" name="city1" type="text" aria-describedby="city-hint">
         </div>
       </div>
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="cardholderName">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="postcode1">
             Postcode
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="bank-postcode" name="postcode1" type="text" aria-describedby="postcode-hint">
         </div>
       </div>
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="lastDigitsCardNumber">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="phone1">
             Phone number
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="lastDigitsCardNumber" name="lastDigitsCardNumber" type="text" aria-describedby="lastDigitsCardNumber-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*">
+          <input class="govuk-input govuk-!-font-size-16" id="bank-phone" name="phone1" type="text" aria-describedby="phone-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*">
         </div>
       </div>
 
       <div class="govuk-grid-row">
     <div class="search-filter__search-button">
       <div class="govuk-grid-column-one-quarter">
-      <a href="find-a-branch-results" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2 govuk-!-width-full" data-module="govuk-button">
-      Search
-      </a>
+        {{ govukButton({
+          text: "Search"
+        }) }}
       </div>
     </div>
 
   </div>
 </div>
 </div>
+</form>
 </div>
 
 <h3 class="govuk-heading-s govuk-!-margin-top-5">0 banks and building societies found</h3>
+
+</form>
 
 
 

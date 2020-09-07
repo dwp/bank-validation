@@ -69,7 +69,7 @@ items: [
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="reference">
             Bank name
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint" value="Barclays">
+          <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="name-hint" value="{{ data['name1'] }}">
         </div>
       </div>
       <div class="govuk-grid-column-one-quarter">
@@ -77,7 +77,7 @@ items: [
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="email">
             Town or city
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint" value="Manchester">
+          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint" value="{{ data['city1'] }}">
         </div>
       </div>
       <div class="govuk-grid-column-one-quarter">
@@ -85,7 +85,7 @@ items: [
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="cardholderName">
             Postcode
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint" value="{{ data['postcode1'] }}">
         </div>
       </div>
       <div class="govuk-grid-column-one-quarter">
@@ -93,7 +93,7 @@ items: [
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="lastDigitsCardNumber">
             Phone number
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="lastDigitsCardNumber" name="lastDigitsCardNumber" type="text" aria-describedby="lastDigitsCardNumber-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*" value="0161">
+          <input class="govuk-input govuk-!-font-size-16" id="lastDigitsCardNumber" name="lastDigitsCardNumber" type="text" aria-describedby="lastDigitsCardNumber-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*" value="{{ data['phone'] }}">
         </div>
       </div>
 
@@ -127,26 +127,26 @@ items: [
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Barclays</td>
-      <td class="govuk-table__cell">102 High Street, Manchester</td>
+      <td class="govuk-table__cell"> {{ data['name1'] }} </td>
+      <td class="govuk-table__cell">102 High Street, {{ data['city1'] }}</td>
       <td class="govuk-table__cell">M1 3AA</td>
       <td class="govuk-table__cell">0161 232 5627</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Barclays</td>
-      <td class="govuk-table__cell">21 Terrance Road, Manchester</td>
+      <td class="govuk-table__cell">{{ data['name1'] }}</td>
+      <td class="govuk-table__cell">21 Terrance Road, {{ data['city1'] }}</td>
       <td class="govuk-table__cell">M4 5TG</td>
       <td class="govuk-table__cell">0161 239 0290</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Barclays</td>
-      <td class="govuk-table__cell">234a St Michael's Place, Manchester</td>
+      <td class="govuk-table__cell">{{ data['name1'] }}</td>
+      <td class="govuk-table__cell">234a St Michael's Place, {{ data['city1'] }}</td>
       <td class="govuk-table__cell">M3 4RT</td>
       <td class="govuk-table__cell">0161 446 3729</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Barclays</td>
-      <td class="govuk-table__cell">2 Hammond Street, Manchester</td>
+      <td class="govuk-table__cell">{{ data['name1'] }}</td>
+      <td class="govuk-table__cell">2 Hammond Street, {{ data['city1'] }}</td>
       <td class="govuk-table__cell">M10 9PP</td>
       <td class="govuk-table__cell">0161 763 2121</td>
     </tr>
