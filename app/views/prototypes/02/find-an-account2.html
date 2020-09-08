@@ -55,6 +55,8 @@ items: [
 
 <div class="govuk-grid-row">
 
+  <form action="/prototypes/02/find-an-account-results2" method="post" class="form">
+
   <div class="search-filter">
 
     <div class="search-filter__selected">
@@ -65,41 +67,42 @@ items: [
 
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="reference">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="sortcode">
             Sortcode
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="sortcode" name="sortcode" type="text" aria-describedby="sortcode-hint">
         </div>
       </div>
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="email">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="account-number">
             Account number
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint">
         </div>
       </div>
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="cardholderName">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="roll-number">
             Roll number (optional)
           </label>
-          <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint">
+          <input class="govuk-input govuk-!-font-size-16" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint">
         </div>
       </div>
 
       <div class="govuk-grid-row">
     <div class="search-filter__search-button">
       <div class="govuk-grid-column-one-third">
-      <a href="find-an-account-results2" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2 govuk-!-width-full" data-module="govuk-button">
-      Search
-      </a>
+        {{ govukButton({
+          text: "Search"
+        }) }}
       </div>
     </div>
 
   </div>
 </div>
 </div>
+</form>
 </div>
 
 <h3 class="govuk-heading-s govuk-!-margin-top-5">0 accounts found</h3>
