@@ -23,13 +23,32 @@ items: [{
 
 }) }}
 
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+label: 'Primary navigation',
+items: [
+{
+  text: 'Home',
+  href: 'home'
+},
+{
+  text: 'Find an account',
+  href: 'find-an-account2'
+},
+{
+  text: 'Find a branch',
+  href: 'find-a-branch'
+}
+]
+}) }}
 {% endblock %}
 
 {% block beforeContent %}
 
 {{ govukBackLink({
   text: "Back",
-  href: "find-an-account-results"
+  href: "find-an-account-results2"
 }) }}
 
 {% endblock %}
@@ -141,7 +160,7 @@ items: [{
 
   {{ govukButton({
     text: "Search again",
-    href: "find-an-account"
+    href: "find-an-account2"
   }) }}
 
 

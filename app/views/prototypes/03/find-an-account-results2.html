@@ -55,6 +55,8 @@ items: [
 
 <div class="govuk-grid-row">
 
+  <form action="/prototypes/02/find-an-account-results2" method="post" class="form">
+
   <div class="search-filter">
 
     <div class="search-filter__selected">
@@ -91,9 +93,10 @@ items: [
       <div class="govuk-grid-row">
     <div class="search-filter__search-button">
       <div class="govuk-grid-column-one-third">
-      <a href="find-a-branch-results" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2 govuk-!-width-full" data-module="govuk-button">
-      Search
-      </a>
+        {{ govukButton({
+          text: "Search",
+          classes: "govuk-!-width-full"
+        }) }}
       </div>
       <div class="govuk-grid-column-one-third" style="padding-top: 10px;">
           <a href="find-an-account2" class="govuk-link">Clear search</a>
@@ -103,6 +106,7 @@ items: [
   </div>
 </div>
 </div>
+</form>
 </div>
 
 <h3 class="govuk-heading-s govuk-!-margin-top-5">1 account found</h3>
