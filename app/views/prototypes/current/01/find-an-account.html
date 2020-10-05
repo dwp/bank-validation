@@ -27,6 +27,13 @@ items: [{
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
 {% endblock %}
 
 {% block content %}
@@ -35,7 +42,7 @@ items: [{
 
 <div class="govuk-grid-row">
 
-  <form action="/prototypes/02/find-an-account-results" method="post" class="form">
+  <form action="/prototypes/current/02/find-an-account-results" method="post" class="form">
 
   <div class="search-filter">
 

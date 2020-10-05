@@ -27,6 +27,13 @@ items: [{
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
 {% endblock %}
 
 {% block content %}
