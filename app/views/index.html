@@ -14,6 +14,14 @@
     }
     ]
   }) }}
+  <div class="homepage-top">
+  <div class="homepage-top-content">
+    <h1 class="govuk-heading-xl">
+      {{serviceName}}
+      <span>Prototypes</span>
+    </h1>
+  </div>
+</div>
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,46 +29,73 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-  <form action="/results" method="post" class="form">
+    {# Start of most recent box #}
+    <div class="most-recent">
 
-  <h1 class="govuk-heading-l">Bank or building society account details</h1>
+      {# Start of prototype write up #}
+      <div class="prototype-write-up">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Date of release</dt>
+              <dd class="govuk-body">TBC</dd>
+            </dl>
+          </div>
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="sort-code">
-    Sort code
-  </label>
-  <span id="sort-code-hint" class="govuk-hint">
-    Must be 6 digits long
-  </span>
-  <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
-</div>
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Feature</dt>
+              <dd class="govuk-body">Audit log</dd>
+            </dl>
+          </div>
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="account-number">
-    Account number
-  </label>
-  <span id="account-number-hint" class="govuk-hint">
-    Must be between 6 and 8 digits long
-  </span>
-  <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
-</div>
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Related stories</dt>
+              <dd class="govuk-body">TBC</dd>
+            </dl>
+          </div>
+        </div>
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="roll-number">
-    Building society roll number (if you have one)
-  </label>
-  <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint" spellcheck="false">
-</div>
+        <h3 class="govuk-heading-s">Changes</h3>
+        <p>N/A</p>
 
-<a href="results" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Search
-</a>
+        <h3 class="govuk-heading-s">Hypothesis</h3>
+        <p>None.</p>
 
-  </form>
+        <h3 class="govuk-heading-s">Research notes</h3>
+        <p>None.</p>
+
+        <h4 class="govuk-heading-s">Version 1</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>includes horizontal search inputs</li>
+        </ul>
+
+        {{ govukButton({
+          text: "View prototype",
+          href: "prototypes/current/01/find-an-account"
+        }) }}
+
+        <h4 class="govuk-heading-s">Version 2</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>includes vertical search inputs</li>
+        </ul>
+
+        {{ govukButton({
+          text: "View prototype",
+          href: "prototypes/current/02/find-an-account"
+        }) }}
+
+      </div>
+      {# End of prototype write up #}
+
+    </div>
+    {# End of most recent box #}
+
+
   </div>
 </div>
 

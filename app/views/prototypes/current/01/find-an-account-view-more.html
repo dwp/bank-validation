@@ -2,7 +2,7 @@
 
 {% block header %}
 {% include "includes/cookie-banner.html" %}
-{# Set serviceName in config.js. #}\
+{# Set serviceName in config.js. #}
 {% from "hmcts-header/macro.njk" import hmctsHeader %}
 
 {{ hmctsHeader({
@@ -41,7 +41,7 @@ items: [{
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Sortcode
+      Sort code
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['sortcode'] }}

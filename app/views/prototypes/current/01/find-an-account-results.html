@@ -48,7 +48,7 @@ items: [{
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="reference">
-            Sortcode
+            Sort code
           </label>
           <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint" value="{{ data['sortcode'] }}">
         </div>
@@ -64,7 +64,7 @@ items: [{
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="cardholderName">
-            Roll number (optional)
+            Roll or membership number (optional)
           </label>
           <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint" value="{{ data['roll-number'] }}">
         </div>
@@ -78,7 +78,7 @@ items: [{
           classes: "govuk-!-width-full"
         }) }}
       </div>
-      <div class="govuk-grid-column-one-third" style="padding-top: 10px;">
+      <div class="govuk-grid-column-one-quarter" style="padding-top: 10px;">
           <a href="find-an-account" class="govuk-link">Clear search</a>
       </div>
     </div>
@@ -89,27 +89,85 @@ items: [{
 </form>
 </div>
 
-<h3 class="govuk-heading-s govuk-!-margin-top-5">1 account found</h3>
+<hr class="govuk-section-break govuk-section-break--m">
 
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Bank name</th>
-      <th scope="col" class="govuk-table__header">Sortcode</th>
-      <th scope="col" class="govuk-table__header">Account number</th>
-      <th scope="col" class="govuk-table__header">Roll number</th>
-      <th scope="col" class="govuk-table__header">More</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Royal Bank of Scotland</td>
-      <td class="govuk-table__cell">{{ data['sortcode'] }}</td>
-      <td class="govuk-table__cell">{{ data['account-number'] }}</td>
-      <td class="govuk-table__cell">N/A</td>
-      <td class="govuk-table__cell"><a href="find-an-account-view-more">View more</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="hmcts-banner hmcts-banner--warning">
+
+<div class="hmcts-banner__message">
+
+<h2 class="govuk-heading-m">This payment will be returned.</h2>
+
+<p>The branch for this sort code has closed. Any payments issued to this sort code will either be redirected to another sort code or returned.</p>
+
+</div>
+
+</div>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Bank name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Royal Bank of Scotland
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Sort code
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['sortcode'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Account number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['account-number'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Direct Debit
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      BACS Credit
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AUDDIS
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      BACS Status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Member
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Closure date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      	10/10/2010
+    </dd>
+  </div>
+</dl>
 
 {% endblock %}
