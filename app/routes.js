@@ -70,4 +70,117 @@ router.post('/find-account-01-results', function (req, res) {
 
 })
 
+
+// FRAUD TESTS 01 - Notification message routing depending on sort code that's entered - horizontal inputs
+
+router.post('/find-account-01-results-fraud', function (req, res) {
+
+  let sortCode = req.session.data['sort-code-fraud-1']
+
+  if (sortCode === '112233') {
+    res.redirect('prototypes/usability-tests/fraud/01/notifications/account-number-match-error')
+  }
+
+  if (sortCode === '223344') {
+    res.redirect('prototypes/usability-tests/fraud/01/notifications/branch-due-to-close-error')
+  }
+
+  if (sortCode === '111111') {
+    res.redirect('prototypes/usability-tests/fraud/01/notifications/success')
+  }
+
+  if (sortCode === '998877') {
+    res.redirect('prototypes/usability-tests/fraud/01/find-an-account-roll-validation')
+  }
+
+})
+
+router.post('/find-account-01-roll-number-fraud', function (req, res) {
+
+  let rollNumber = req.session.data['roll-number1']
+
+  if (rollNumber === 'AK12345678') {
+    res.redirect('prototypes/usability-tests/fraud/01/notifications/roll-number-success')
+  }
+
+})
+
+// FRAUD TESTS 02 - Notification message routing depending on sort code that's entered - vertical inputs
+
+router.post('/find-account-02-results-fraud', function (req, res) {
+
+  let sortCode = req.session.data['sort-code2']
+
+  if (sortCode === '112233') {
+    res.redirect('prototypes/usability-tests/fraud/02/notifications/account-number-match-error')
+  }
+
+  if (sortCode === '223344') {
+    res.redirect('prototypes/usability-tests/fraud/02/notifications/branch-due-to-close-error')
+  }
+
+  if (sortCode === '111111') {
+    res.redirect('prototypes/usability-tests/fraud/02/notifications/success')
+  }
+
+  if (sortCode === '998877') {
+    res.redirect('prototypes/usability-tests/fraud/02/find-an-account-roll-validation')
+  }
+
+})
+
+router.post('/find-account-02-roll-number-fraud', function (req, res) {
+
+  let rollNumber = req.session.data['roll-number2']
+
+  if (rollNumber === 'AK12345678') {
+    res.redirect('prototypes/usability-tests/fraud/02/notifications/roll-number-success')
+  }
+
+})
+
+// BLS TESTS - Notification message routing depending on sort code that's entered - horizontal inputs
+
+router.post('/find-account-01-results-bls', function (req, res) {
+
+  let sortCode = req.session.data['sort-code5']
+
+  if (sortCode === '112233') {
+    res.redirect('prototypes/usability-tests/bls/01/notifications/account-number-match-error')
+  }
+
+  if (sortCode === '223344') {
+    res.redirect('prototypes/usability-tests/bls/01/notifications/branch-due-to-close-error')
+  }
+
+  if (sortCode === '111111') {
+    res.redirect('prototypes/usability-tests/bls/01/notifications/success')
+  }
+
+  if (sortCode === '998877') {
+    res.redirect('prototypes/usability-tests/bls/01/find-an-account-roll-validation')
+  }
+
+})
+
+// BLS TESTS - Notification message routing depending on sort code that's entered - horizontal inputs
+
+router.post('/find-account-02-results-bls', function (req, res) {
+
+  let sortCode = req.session.data['sort-code4']
+
+  if (sortCode === '112233') {
+    res.redirect('prototypes/usability-tests/bls/02/notifications/account-number-match-error')
+  }
+
+  if (sortCode === '223344') {
+    res.redirect('prototypes/usability-tests/bls/02/notifications/branch-due-to-close-error')
+  }
+
+  if (sortCode === '111111') {
+    res.redirect('prototypes/usability-tests/bls/02/notifications/success')
+  }
+
+})
+
 module.exports = router

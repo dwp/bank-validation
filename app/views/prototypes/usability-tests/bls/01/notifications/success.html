@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+
+{{ hmctsHeader({
+
+service: {
+name: 'Validate bank details',
+url: '/index'
+},
+
+navigation: {
+label: 'Account navigation',
+items: [{
+  text: '',
+  href: ''
+}
+]
+}
+
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Find an account</h1>
+
+<div class="govuk-grid-row">
+
+  <form action="/find-account-01-results-bls" method="post" class="form">
+
+  <div class="search-filter">
+
+    <div class="search-filter__selected">
+
+      <div class="search-filter__title">
+        <h2 class="govuk-heading-m">Search</h2>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="sort-code5">
+            Sort code
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="sort-code5" name="sort-code5" type="text" aria-describedby="reference-hint" value="{{ data['sort-code5'] }}">
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="email">
+            Account number
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint" value="{{ data['account-number'] }}">
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="cardholderName">
+            Roll or membership number (optional)
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint" value="{{ data['roll-number'] }}">
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+    <div class="search-filter__search-button">
+      <div class="govuk-grid-column-one-third">
+        {{ govukButton({
+          text: "Search",
+          classes: "govuk-!-width-full"
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-quarter" style="padding-top: 10px;">
+          <a href="../find-an-account" class="govuk-link">Clear search</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</form>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m">
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<br>
+<div class="hmcts-banner hmcts-banner--success">
+
+<div class="hmcts-banner__message">
+
+<h2 class="govuk-heading-m">Payments made to this account will be successful.</h2>
+
+</div>
+
+</div>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Bank name and address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Royal Bank of Scotland<br>
+      193 High Street,<br>
+      Manchester<br>
+      M3 9JA
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      BACS Credit
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Direct Debit and AUDDIS
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Faster Payments
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+</dl>
+</form>
+
+{% endblock %}
