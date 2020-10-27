@@ -5,5 +5,6 @@ const router = express.Router()
 
 router.use('/fraud', require('./views/fraud/index'));
 router.use('/fraud-vertical', require('./views/fraud-vertical/index'));
+router.use('/03', require('./views/03/index'));
 
 module.exports = router

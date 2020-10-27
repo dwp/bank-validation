@@ -45,7 +45,7 @@ items: [{
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#roll-number-error">Enter a valid account number like 00733445</a>
+        <a href="#roll-number-error">Enter a valid sort code like 309430</a>
       </li>
     </ul>
   </div>
@@ -55,27 +55,27 @@ items: [{
 
   <form action="find-account" method="post" class="form">
 
-<div class="govuk-form-group">
+<div class="govuk-form-group govuk-form-group--error">
   <label class="govuk-label" for="sort-code">
     Sort code
   </label>
   <div id="sort-code-hint" class="govuk-hint">
     Must be 6 digits long
   </div>
-  <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+  <span id="roll-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a valid sort code like 309430
+  </span>
+  <input class="govuk-input govuk-input--width-5 govuk-input--error" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
 </div>
 
-<div class="govuk-form-group govuk-form-group--error">
+<div class="govuk-form-group">
   <label class="govuk-label" for="account-number">
     Account number
   </label>
   <div id="account-number-hint" class="govuk-hint">
     Must be between 6 and 8 digits long
   </div>
-  <span id="roll-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a valid account number like 00733445
-  </span>
-  <input class="govuk-input govuk-input--width-10 govuk-input--error" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
+  <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
 </div>
 
 <div class="govuk-form-group">
@@ -92,25 +92,6 @@ items: [{
 <a href="../find-an-account" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-bottom: 10px" data-module="govuk-button">
   Clear search
 </a>
-
-<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-<br>
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Bank name and address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Old School Bank<br>
-      193 High Street,<br>
-      Manchester,<br>
-      M3 9JA
-    </dd>
-  </div>
-</dl>
-
-</form>
 
 </form>
 
