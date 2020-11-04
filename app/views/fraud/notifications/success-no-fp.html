@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+
+{{ hmctsHeader({
+
+service: {
+name: 'Validate bank details',
+url: '/index'
+},
+
+navigation: {
+label: 'Account navigation',
+items: [{
+  text: '',
+  href: ''
+}
+]
+}
+
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Find an account</h1>
+
+  <form action="/find-account-02-results-fraud" method="post" class="form">
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort-code1">
+        Sort code
+      </label>
+      <div id="sort-code-hint" class="govuk-hint">
+        Must be 6 digits long
+      </div>
+      <input class="govuk-input govuk-input--width-5" id="sort-code2" name="sort-code2" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="account-number1">
+        Account number
+      </label>
+      <div id="account-number-hint" class="govuk-hint">
+        Must be between 6 and 8 digits long
+      </div>
+      <input class="govuk-input govuk-input--width-10" id="account-number2" name="account-number2" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="roll-number1">
+        Roll number or membership number (if you have one)
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="roll-number2" name="roll-number2" type="text" spellcheck="false" aria-describedby="roll-number-hint">
+    </div>
+
+
+    <button class="govuk-button govuk-!-margin-right-2" style="margin-bottom: 10px" data-module="govuk-button">
+      Search
+    </button>
+
+    <a href="../find-an-account" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-bottom: 10px" data-module="govuk-button">
+      Clear search
+    </a>
+
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<br>
+<div class="hmcts-banner hmcts-banner--success">
+
+<div class="hmcts-banner__message">
+
+<h2 class="govuk-heading-m">Payments made to this account will be successful.</h2>
+
+</div>
+
+</div>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Bank name and address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Royal Bank of Scotland<br>
+      193 High Street,<br>
+      Manchester<br>
+      M3 9JA
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Faster Payments
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+</dl>
+</form>
+
+{% endblock %}

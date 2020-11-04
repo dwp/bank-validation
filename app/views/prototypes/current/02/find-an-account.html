@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+
+{{ hmctsHeader({
+
+service: {
+name: 'Validate bank details',
+url: '/index'
+},
+
+navigation: {
+label: 'Account navigation',
+items: [{
+  text: '',
+  href: ''
+}
+]
+}
+
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Find an account</h1>
+
+  <form action="/find-account" method="post" class="form">
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort-code1">
+    Sort code
+  </label>
+  <div id="sort-code-hint" class="govuk-hint">
+    Must be 6 digits long
+  </div>
+  <input class="govuk-input govuk-input--width-5" id="sort-code1" name="sort-code1" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="account-number1">
+    Account number
+  </label>
+  <div id="account-number-hint" class="govuk-hint">
+    Must be between 6 and 8 digits long
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="account-number1" name="account-number1" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="roll-number1">
+    Roll number or membership number (if you have one)
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="roll-number1" name="roll-number1" type="text" spellcheck="false" aria-describedby="roll-number-hint">
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Search
+</button>
+
+</form>
+
+
+{% endblock %}

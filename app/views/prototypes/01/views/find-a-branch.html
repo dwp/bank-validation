@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+
+{{ hmctsHeader({
+
+service: {
+name: 'Validate bank details',
+url: '#'
+},
+
+navigation: {
+label: 'Account navigation',
+items: [{
+  text: '',
+  href: ''
+}
+]
+}
+
+}) }}
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+label: 'Primary navigation',
+items: [
+{
+  text: 'Home',
+  href: 'home'
+},
+{
+  text: 'Find an account',
+  href: 'find-an-account2'
+},
+{
+  text: 'Find a branch',
+  href: 'find-a-branch',
+  active: true
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Find a branch</h1>
+
+<div class="govuk-grid-row">
+
+  <form action="/prototypes/02/find-a-branch-results" method="post" class="form">
+
+  <div class="search-filter">
+
+    <div class="search-filter__selected">
+
+      <div class="search-filter__title">
+        <h2 class="govuk-heading-m">Search</h2>
+        <p class="govuk-body">Enter up to three search terms. You can include partial search terms.</p>
+      </div>
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="name1">
+            Bank name
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="bank-name" name="name1" type="text" aria-describedby="name-hint">
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="city1">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="bank-city" name="city1" type="text" aria-describedby="city-hint">
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="postcode1">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="bank-postcode" name="postcode1" type="text" aria-describedby="postcode-hint">
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-1" for="phone1">
+            Phone number
+          </label>
+          <input class="govuk-input govuk-!-font-size-16" id="bank-phone" name="phone1" type="text" aria-describedby="phone-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*">
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+    <div class="search-filter__search-button">
+      <div class="govuk-grid-column-one-quarter">
+        {{ govukButton({
+          text: "Search",
+          classes: "govuk-!-width-full"
+        }) }}
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</form>
+</div>
+
+<h3 class="govuk-heading-s govuk-!-margin-top-5">0 banks and building societies found</h3>
+
+</form>
+
+
+
+{% endblock %}
