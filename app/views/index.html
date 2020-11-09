@@ -48,7 +48,7 @@
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Feature</dt>
-              <dd class="govuk-body">Audit log</dd>
+              <dd class="govuk-body">Bank validation UI</dd>
             </dl>
           </div>
 
@@ -64,31 +64,19 @@
         <p>N/A</p>
 
         <h3 class="govuk-heading-s">Hypothesis</h3>
-        <p>None.</p>
+        <p>Due to be updated</p>
 
         <h3 class="govuk-heading-s">Research notes</h3>
-        <p>None.</p>
+        <p>Due to be updated</p>
 
-        <h4 class="govuk-heading-s">Version 1</h4>
+        <h4 class="govuk-heading-s">Version</h4>
         <ul class="govuk-list govuk-list--bullet">
           <li>includes vertical search inputs</li>
         </ul>
 
         {{ govukButton({
           text: "View prototype",
-          href: "fraud/find-an-account"
-        }) }}
-
-        <h4 class="govuk-heading-s">Iteration 2</h4>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>iterated notification messaging</li>
-          <li>added Direct Debit and Faster Payment 'no' messaging to success notifications</li>
-          <li>removed list summary items, such as Direct Debit and Faster Payment when 'yes'</li>
-        </ul>
-
-        {{ govukButton({
-          text: "View prototype",
-          href: "/03/find-an-account"
+          href: "/fraud/find-an-account"
         }) }}
 
       </div>
@@ -108,6 +96,50 @@
             </summary>
             <div class="govuk-details__text">
 
+
+            {# Start of prototype write up #}
+
+            <div class="prototype-write-up">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <dl>
+                    <dt class="govuk-heading-s">Date of release</dt>
+                    <dd class="govuk-body">TBC</dd>
+                  </dl>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                  <dl>
+                    <dt class="govuk-heading-s">Feature</dt>
+                    <dd class="govuk-body">Additional info in success notifications</dd>
+                  </dl>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                  <dl>
+                    <dt class="govuk-heading-s">Related stories</dt>
+                    <dd class="govuk-body">N/A</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <h3 class="govuk-heading-s">Information about this feature</h3>
+              <ul>
+              <li>iterated notification messaging</li>
+              <li>added Direct Debit and Faster Payment 'no' messaging to success notifications</li>
+              <li>removed list summary items, such as Direct Debit and Faster Payment when 'yes'</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">Research notes</h3>
+
+              <p>Usability sessions showed that users were getting confused with having some payment issue messaging in success notifications.</p>
+
+              {{ govukButton({
+                text: "View prototype",
+                href: "/03/find-an-account"
+              }) }}
+            </div>
+            {# End of prototype write up #}
 
             {# Start of prototype write up #}
 
