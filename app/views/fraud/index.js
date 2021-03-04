@@ -44,6 +44,10 @@ router.post('/find-account', function (req, res) {
     res.redirect('find-an-account-roll-validation')
   }
 
+  if (sortCode === '887766') {
+    res.redirect('notifications/success-multiple-addresses')
+  }
+
 })
 
 router.post('/find-account-02-roll-number-fraud', function (req, res) {
