@@ -48,7 +48,7 @@ router.post('/find-account', function (req, res) {
     res.redirect('notifications/success-multiple-addresses')
   }
 
-  if (sortCode === '776655') {
+  if (sortCode === '400530') {
     res.redirect('notifications/success-multiple-addresses-table')
   }
 
