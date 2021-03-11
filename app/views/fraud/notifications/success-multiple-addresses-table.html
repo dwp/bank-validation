@@ -80,7 +80,10 @@ items: [{
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-<h3 class="govuk-heading-m">There are multiple banks for this sort code</h3>
+{{ govukWarningText({
+  text: "There are multiple addresses linked to this sort code",
+  iconFallbackText: "Warning"
+}) }}
 
 
 {{ govukTable({
