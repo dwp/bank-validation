@@ -48,6 +48,10 @@ router.post('/find-account', function (req, res) {
     res.redirect('notifications/success-multiple-addresses')
   }
 
+  if (sortCode === '776655') {
+    res.redirect('notifications/success-multiple-addresses-table')
+  }
+
 })
 
 router.post('/find-account-02-roll-number-fraud', function (req, res) {
