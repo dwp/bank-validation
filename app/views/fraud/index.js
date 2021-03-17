@@ -9,49 +9,78 @@ router.post('/find-account', function (req, res) {
   let sortCode = req.session.data['sort-code']
 
   if (sortCode === '112233') {
-    res.redirect('notifications/account-number-match-error')
+    res.redirect('./notifications/account-number-match-error')
   }
 
-  if (sortCode === '223344') {
-    res.redirect('notifications/branch-due-to-close-error')
+  else if (sortCode === '223344') {
+    res.redirect('./notifications/branch-due-to-close-error')
   }
 
-  if (sortCode === '111111') {
-    res.redirect('notifications/success')
+  else if (sortCode === '111111') {
+    res.redirect('./notifications/success')
   }
 
-  if (sortCode === '222222') {
-    res.redirect('notifications/success-no-dd')
+  else if (sortCode === '222222') {
+    res.redirect('./notifications/success-no-dd')
   }
 
-  if (sortCode === '333333') {
-    res.redirect('notifications/success-no-fp')
+  else if (sortCode === '333333') {
+    res.redirect('./notifications/success-no-fp')
   }
+
+  else if (sortCode === '887766') {
+    res.redirect('./notifications/success-multiple-addresses')
+  }
+
+  else if (sortCode === '400530') {
+    res.redirect('./notifications/success-multiple-addresses-table')
+  }
+
+  else if (sortCode === '334455') {
+    res.redirect('./input-validation/incorrect-roll-number')
+  }
+
+  else if (sortCode === '4455667') {
+    res.redirect('./input-validation/sort-code-length')
+  }
+
+  else if (sortCode === '556677') {
+    res.redirect('./input-validation/account-number-length')
+  }
+
+  else if (sortCode === '998877') {
+    res.redirect('./input-validation/find-an-account-roll-validation')
+  }
+
+})
+
+router.post('./input-validation/find-account', function (req, res) {
+
+  let sortCode = req.session.data['sort-code']
 
   if (sortCode === '334455') {
-    res.redirect('input-validation/incorrect-roll-number')
+    res.redirect('incorrect-roll-number')
   }
 
-  if (sortCode === '4455667') {
-    res.redirect('input-validation/sort-code-length')
+  else if (sortCode === '4455667') {
+    res.redirect('sort-code-length')
   }
 
-  if (sortCode === '556677') {
-    res.redirect('input-validation/account-number-length')
+  else if (sortCode === '556677') {
+    res.redirect('account-number-length')
   }
 
-  if (sortCode === '998877') {
+  else if (sortCode === '998877') {
     res.redirect('find-an-account-roll-validation')
   }
 
-  if (sortCode === '887766') {
-    res.redirect('notifications/success-multiple-addresses')
-  }
+})
 
-  if (sortCode === '400530') {
-    res.redirect('notifications/success-multiple-addresses-table')
+router.post('/find-account', function (req, res) {
+  let sortCode = req.session.data['sort-code']
+  if (sortCode === '998877') {
+    res.redirect('find-an-account-roll-validation')
   }
-
 })
 
 router.post('/find-account-02-roll-number-fraud', function (req, res) {

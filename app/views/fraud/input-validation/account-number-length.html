@@ -38,6 +38,8 @@ items: [{
 
 {% block content %}
 
+<form action="find-account" method="post" class="form">
+
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
@@ -52,8 +54,6 @@ items: [{
 </div>
 
 <h1 class="govuk-heading-l">Find an account</h1>
-
-  <form action="find-account" method="post" class="form">
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="sort-code">
