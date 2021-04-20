@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+
+{{ hmctsHeader({
+
+service: {
+name: 'Check payment account details',
+url: '/index'
+},
+
+navigation: {
+label: 'Account navigation',
+items: [{
+  text: '',
+  href: ''
+}
+]
+}
+
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Find an account</h1>
+
+  <form action="find-account" method="post" class="form">
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort-code">
+        Sort code
+      </label>
+      <div id="sort-code-hint" class="govuk-hint">
+        It must be 6 digits long, and you can use spaces, hyphens or dashes
+      </div>
+      <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="account-number2">
+        Account number
+      </label>
+      <div id="account-number-hint" class="govuk-hint">
+        Must be between 6 and 8 digits long
+      </div>
+      <input class="govuk-input govuk-input--width-10" id="account-number2" name="account-number2" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="roll-number2">
+        Roll number or membership number (if you have one)
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="roll-number2" name="roll-number2" type="text" spellcheck="false" aria-describedby="roll-number-hint">
+    </div>
+
+
+    <button class="govuk-button govuk-!-margin-right-2" style="margin-bottom: 10px" data-module="govuk-button">
+      Search
+    </button>
+
+    <a href="../find-an-account" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-bottom: 10px" data-module="govuk-button">
+      Clear search
+    </a>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{{ govukWarningText({
+  text: "There are multiple addresses linked to this sort code",
+  iconFallbackText: "Warning"
+}) }}
+
+
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Bank name",
+      classes: 'govuk-!-width-one-third'
+    },
+    {
+      text: "Address",
+      classes: 'govuk-!-width-one-third'
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Darlington Building Society"
+      },
+      {
+        html: "26 Market Place,<br> Barnard Castle,<br> DL12 8NB"
+      }
+    ],
+    [
+      {
+        text: "Flintshire Credit Union"
+      },
+      {
+        html: "27 High Street,<br> Holywell,<br> CH8 7TE"
+      }
+    ],
+    [
+      {
+        text: "Harpenden Building Society"
+      },
+      {
+        html: "22 Market Square,<br> Leighton Buzzard,<br> LU7 1HE"
+      }
+    ],
+    [
+      {
+        text: "Hinckley and Rugby Building Society"
+      },
+      {
+        html: "Marlborough Square,<br> Coalville,<br> LE67 3WD"
+      }
+    ],
+    [
+      {
+        text: "HSBC - main branch"
+      },
+      {
+        html: "60 Queen Victoria Street,<br> London,<br> EC4N 4TR"
+      }
+    ],
+    [
+      {
+        text: "Leek United Building Society"
+      },
+      {
+        html: "50 St Edward Street,<br> Leek,<br> ST13 5DL"
+      }
+    ],
+    [
+      {
+        text: "Monmouthshire Building Society"
+      },
+      {
+        html: "10 Agincourt Square,<br> Monmouth,<br> NP25 3DY"
+      }
+    ],
+    [
+      {
+        text: "Stafford Railway Building Society"
+      },
+      {
+        html: "14 Market Square,<br> Stafford,<br> ST16 2JH"
+      }
+    ]
+  ]
+}) }}
+
+</form>
+
+{% endblock %}
