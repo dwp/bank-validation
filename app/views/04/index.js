@@ -28,6 +28,14 @@ router.post('/find-account', function (req, res) {
     res.redirect('./notifications/success-no-fp')
   }
 
+  else if (sortCode === '444444') {
+    res.redirect('./notifications/roll-number-format')
+  }
+
+  else if (sortCode === '555555') {
+    res.redirect('./notifications/sort-code-error')
+  }
+
   else if (sortCode === '887766') {
     res.redirect('./notifications/success-multiple-addresses')
   }
