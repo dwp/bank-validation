@@ -56,6 +56,10 @@ router.post('/find-account', function (req, res) {
     res.redirect('./input-validation/account-number-length')
   }
 
+  else if (sortCode === '000000') {
+    res.redirect('service-down')
+  }
+
   else if (sortCode === '998877') {
     res.redirect('./input-validation/find-an-account-roll-validation')
   }
