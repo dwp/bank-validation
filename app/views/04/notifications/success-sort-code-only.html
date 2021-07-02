@@ -43,13 +43,13 @@ items: [{
   <form action="find-account" method="post" class="form">
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="sort-code">
+      <label class="govuk-label" for="sort-code2">
         Sort code
       </label>
       <div id="sort-code-hint" class="govuk-hint">
         It must be 6 digits long, and you can use spaces, hyphens or dashes
       </div>
-      <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+      <input class="govuk-input govuk-input--width-5" id="sort-code2" name="sort-code2" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
     </div>
 
     <div class="govuk-form-group">
@@ -82,17 +82,7 @@ items: [{
 
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<br>
-<div class="hmcts-banner hmcts-banner--warning">
 
-<div class="hmcts-banner__message">
-
-<h2 class="govuk-heading-m">The sort code is no longer valid. Payments will fail if you use it.</h2>
-<p>The sort code is out of date. Use the <a href="#">Direct Payment Input Guide</a> to find out more.</p>
-
-</div>
-
-</div>
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
@@ -100,37 +90,12 @@ items: [{
       Bank name and address
     </dt>
     <dd class="govuk-summary-list__value">
-      Old School Bank<br>
+      Royal Bank of Scotland<br>
       193 High Street,<br>
-      Stockport,<br>
-      SK3 1PD
+      Manchester,<br>
+      M3 9JA
     </dd>
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      BACS Credit
-    </dt>
-    <dd class="govuk-summary-list__value">
-      No
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Direct Debit and AUDDIS
-    </dt>
-    <dd class="govuk-summary-list__value">
-      No
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Faster Payments
-    </dt>
-    <dd class="govuk-summary-list__value">
-      No
-    </dd>
-  </div>
-
 </dl>
 </form>
 

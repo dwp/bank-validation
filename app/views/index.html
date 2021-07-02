@@ -74,6 +74,23 @@
           <li>includes content changes</li>
         </ul>
 
+        <h4 class="govuk-heading-s">Sort codes</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>111111 - success (sort code only)</li>
+          <li>222222 - success (no direct debit/auddis)</li>
+          <li>333333 - success (no faster payments)</li>
+          <li>444444 - the roll or membership number is not in the correct format</li>
+          <li>555555 - the sort code is out of date</li>
+          <li>112233 - the account number could not be matched to the sort code</li>
+          <li>223344 - the sort code does not exist</li>
+          <li>334455 - roll number validation</li>
+          <li>4455667 - sort code length validation</li>
+          <li>556677 - enter a valid account number like 00733445</li>
+          <li>998877 - this account requires a roll number or membership number</li>
+          <li>887766 - multiple banks (v1)</li>
+          <li>400530 - multiple accounts (v2)</li>
+        </ul>
+
         {{ govukButton({
           text: "View prototype",
           href: "/04/find-an-account"
